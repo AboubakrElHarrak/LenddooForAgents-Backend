@@ -158,6 +158,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:verification/screens/home_screen.dart';
 
+import 'signin_screen.dart';
+
 enum MobileVerificationState {
   SHOW_MOBILE_FORM_STATE,
   SHOW_OTP_FORM_STATE,
@@ -196,7 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
       });
 
       if(authCredential?.user != null){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> SignInScreen()));
       }
 
     } on FirebaseAuthException catch (e) {

@@ -31,6 +31,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:verification/screens/home_screen.dart';
 import 'package:verification/screens/login_screen.dart';
+import 'package:verification/screens/signup_screen.dart';
+
+import 'screens/signin_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,21 +55,14 @@ class MyApp extends StatelessWidget {
         home: InitializerWidget());
   }
 }
-
 class InitializerWidget extends StatefulWidget {
   @override
   _InitializerWidgetState createState() => _InitializerWidgetState();
 }
-
 class _InitializerWidgetState extends State<InitializerWidget> {
-
   FirebaseAuth _auth;
-
   User _user;
-
   bool isLoading = true;
-
-
   @override
   void initState() {
     // TODO: implement initState
@@ -87,3 +83,24 @@ class _InitializerWidgetState extends State<InitializerWidget> {
 }
 
 
+/*void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
+}*/
+
+/*class MyApp extends StatelessWidget {
+  const MyApp({key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const SignInScreen(),
+    );
+  }
+}*/
